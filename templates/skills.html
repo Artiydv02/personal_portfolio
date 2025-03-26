@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}Arti's Portfolio - Skills{% endblock %}
+
+{% block content %}
+<!-- Skills Header -->
+<section class="skills-header mb-5 scroll-animate">
+    <div class="section-header">
+        <h2>My Skills</h2>
+        <p>My technical toolkit is focused on data analysis, visualization, and deriving actionable insights</p>
+    </div>
+</section>
+
+<!-- Technical Skills -->
+<section class="skills-section mb-5 scroll-animate">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Technical Skills</h3>
+            
+            <!-- Skill Visualization -->
+            <div class="row mt-4">
+                {% for category, skills in skill_proficiency.items() %}
+                <div class="col-md-6 mb-4">
+                    <div class="skill-category">
+                        <h4 class="mb-3">{{ category }}</h4>
+                        <div class="skill-progress-container">
+                            {% for skill in skills %}
+                            <div class="skill-item mb-3 skill-animated">
+                                <div class="skill-info d-flex justify-content-between mb-1">
+                                    <span>{{ skill.name }}</span>
+                                    <span>{{ skill.level }}%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="{{ skill.level }}%" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Additional Skills -->
+            <div class="mt-4">
+                <h4 class="mb-3">Additional Skills</h4>
+                {% for category, skills in skill_categories.items() %}
+                <div class="mb-2">
+                    <small class="text-muted">{{ category }}:</small>
+                    <div>
+                        {% for skill in skills %}
+                        <span class="skill-badge">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Timeline -->
+<section class="education-section mb-5 scroll-animate">
+    <div class="section-header mb-5">
+        <h2>Education</h2>
+        <p>My academic journey</p>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <div class="timeline">
+                {% for edu in education %}
+                <div class="timeline-item {% if loop.index is odd %}left{% else %}right{% endif %}">
+                    <div class="timeline-content">
+                        <h4>{{ edu.degree }}</h4>
+                        <div class="timeline-date">{{ edu.timeline }}</div>
+                        <p class="mb-2">{{ edu.institution }}</p>
+                        <p>{{ edu.details }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Soft Skills Section -->
+<section class="soft-skills-section mb-5 scroll-animate">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Soft Skills</h3>
+            
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-icon mb-3">
+                            <i class="fas fa-users fa-3x" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Team Collaboration</h4>
+                        <p>Effective communication and coordination with team members to achieve project goals.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-icon mb-3">
+                            <i class="fas fa-lightbulb fa-3x" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Problem Solving</h4>
+                        <p>Analytical approach to identify problems and create innovative solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-icon mb-3">
+                            <i class="fas fa-clock fa-3x" style="color: var(--primary-color);"></i>
+                        </div>
+                        <h4>Time Management</h4>
+                        <p>Prioritizing tasks and managing deadlines efficiently for optimal productivity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certificates & Achievements -->
+<section class="certificates-section mb-5 scroll-animate">
+    <div class="section-header mb-5">
+        <h2>Certificates & Achievements</h2>
+        <p>My professional qualifications and recognitions</p>
+    </div>
+    
+    <div class="row">
+        {% for cert in certificates %}
+        <div class="col-md-4 mb-4">
+            <div class="certificate-badge">
+                <div class="certificate-icon">
+                    <i class="fas {{ cert.badge_icon }}"></i>
+                </div>
+                <div class="certificate-content">
+                    <h4>{{ cert.name }}</h4>
+                    <div class="certificate-issuer">{{ cert.issuer }}</div>
+                    <small>{{ cert.date }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Learning Journey -->
+<section class="learning-section mb-5 scroll-animate">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title mb-4">Continuous Learning</h3>
+            
+            <div class="mb-4">
+                <h4>Currently Learning</h4>
+                <div class="d-flex flex-wrap">
+                    <span class="skill-badge">Advanced Machine Learning</span>
+                    <span class="skill-badge">Business Intelligence</span>
+                    <span class="skill-badge">Data Engineering</span>
+                </div>
+            </div>
+            
+            <div>
+                <h4>Future Learning Goals</h4>
+                <div class="d-flex flex-wrap">
+                    <span class="skill-badge">Cloud Computing</span>
+                    <span class="skill-badge">Natural Language Processing</span>
+                    <span class="skill-badge">Big Data Technologies</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

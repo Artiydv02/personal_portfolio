@@ -1,0 +1,7 @@
+flask==2.3.3
+flask-bootstrap==3.3.7.1
+python-dotenv==1.0.0
+pypdf2==3.0.1
+werkzeug==2.3.7
+requests==2.31.0
+gunicorn==23.0.0

@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block title %}Arti's Portfolio - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section mb-5 scroll-animate">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="display-4 mb-4 font-weight-bold">
+                <span class="d-block">Hello, I'm</span>
+                <span style="background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Arti</span>
+            </h1>
+            
+            <h2 class="mb-4">
+                <span class="typed-text"></span>
+            </h2>
+            
+            <p class="lead mb-5">
+                Transforming data into actionable insights | Python | SQL | Power BI | Machine Learning
+            </p>
+            
+            <div class="d-flex flex-wrap">
+                <a href="{{ url_for('resume') }}" class="btn btn-primary mr-3 mb-3">View Resume</a>
+                <a href="{{ url_for('projects') }}" class="btn btn-outline-primary mb-3">Explore Projects</a>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 text-center">
+            <img src="{{ url_for('static', filename='images/arti_profile.jpg') }}" alt="Arti" class="profile-image">
+            <h3 class="mt-3">Arti</h3>
+            <p class="text-muted">Data Professional</p>
+            <p class="mt-3">📞 +91 8287963396</p>
+            <p><a href="mailto:artiyad2004@gmail.com">artiyad2004@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section my-5 scroll-animate">
+    <div class="section-header mb-5">
+        <h2>About Me</h2>
+        <p>Get to know me better</p>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="mb-4">
+                        I'm an aspiring <span style="color: var(--secondary-color); font-weight: 500;">Business Analyst</span> with hands-on experience in data analysis, Power BI, and Python. I'm skilled in Excel, SQL, and machine learning concepts to derive actionable insights.
+                    </p>
+                    
+                    <p class="mb-4">
+                        I'm passionate about leveraging <span style="color: var(--secondary-color); font-weight: 500;">data-driven strategies</span> to improve business performance and have a strong understanding of key business metrics like CAC, CLV, and ROI.
+                    </p>
+                    
+                    <p class="mb-4">
+                        Currently, I'm enhancing my expertise in business analytics through real-world projects and coursework at <span style="color: var(--secondary-color); font-weight: 500;">MNIT Jaipur</span>.
+                    </p>
+                </div>
+                
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Quick Stats</h4>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">3+</div>
+                                        <div class="stat-label">Projects</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">10+</div>
+                                        <div class="stat-label">Skills</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">3</div>
+                                        <div class="stat-label">Certificates</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4 class="mb-3">Let's Connect</h4>
+                        <div class="social-icons">
+                            <a href="mailto:artiyad2004@gmail.com" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/arti-yadav-65b900268/" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Artiydv02" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="tel:+918287963396" class="social-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="projects-section my-5 scroll-animate">
+    <div class="section-header mb-5">
+        <h2>Featured Projects</h2>
+        <p>Some of my recent work</p>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="project-card h-100">
+                <div class="project-header">
+                    <h3 class="project-title">Diwali Sales Analysis</h3>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Performed Data Cleaning and manipulation using Exploratory Data Analysis (EDA). Used Python libraries like Pandas, NumPy, matplotlib and seaborn.
+                    </p>
+                    <div class="mb-3">
+                        <span class="project-badge highlight-badge">Improved inventory planning</span>
+                        <span class="project-badge highlight-badge">Identified top-selling products</span>
+                    </div>
+                    <div>
+                        <span class="project-badge">Python</span>
+                        <span class="project-badge">Pandas</span>
+                        <span class="project-badge">NumPy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="project-card h-100">
+                <div class="project-header">
+                    <h3 class="project-title">Credit Card Financial Dashboard</h3>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Analyzed credit card translation data using Power BI Desktop, covering revenue, transaction volume, and other key metrics by various categories.
+                    </p>
+                    <div class="mb-3">
+                        <span class="project-badge highlight-badge">Interactive dashboard</span>
+                        <span class="project-badge highlight-badge">Financial metrics visualization</span>
+                    </div>
+                    <div>
+                        <span class="project-badge">Power BI</span>
+                        <span class="project-badge">Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center mt-4">
+        <a href="{{ url_for('projects') }}" class="btn btn-outline-primary">View All Projects</a>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section my-5 scroll-animate">
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <h2 class="mb-4">Let's Work Together</h2>
+            <p class="lead mb-4">Looking for a dedicated data professional to join your team?</p>
+            <div class="d-flex justify-content-center">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary mr-3">Contact Me</a>
+                <a href="{{ url_for('chat') }}" class="btn btn-outline-primary">Chat with Me</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
