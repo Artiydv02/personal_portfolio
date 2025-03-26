@@ -1,4 +1,4 @@
-# Arti's Portfolio Website
+# My Portfolio 
 
 A professional portfolio website built with Flask, featuring a resume showcase and AI-powered chatbot integration.
 
